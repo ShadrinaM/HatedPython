@@ -1,0 +1,72 @@
+создать БД в соответствии с предметной областью, 
+БД должна содержать не менее трех связанных таблиц, 
+заполнить таблицы БД информацией с помощью SQL-запросов,
+написать не менее трех статистических запросов (SELECT),
+создать CGI-сервер
+создать форму(формы) для заполнения полей таблиц,
+осуществить вывод содержимого таблиц на html-страницу
+экспорт/импорт таблицы в xml, используя заданную библиотеку библиотеку "
+
+
+
+
+
+
+CREATE TABLE Танцоры (
+    id_танцора INT PRIMARY KEY,
+    имя VARCHAR(100),
+    возраст INT,
+    стиль VARCHAR(50),
+    id_группы INT,
+    FOREIGN KEY (id_группы) REFERENCES Группы(id_группы)
+);
+
+CREATE TABLE Группы (
+    id_группы INT PRIMARY KEY,
+    название VARCHAR(100),
+    город VARCHAR(50)
+);
+
+CREATE TABLE Фестивали (
+    id_фестиваля INT PRIMARY KEY,
+    название VARCHAR(100),
+    дата DATE,
+    id_группы INT,
+    FOREIGN KEY (id_группы) REFERENCES Группы(id_группы)
+);
+
+
+
+
+
+
+
+
+CREATE TABLE Dancers (
+    dancer_id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER,
+    style TEXT,
+    group_id INTEGER,
+    FOREIGN KEY (group_id) REFERENCES Groups(group_id)
+);
+
+CREATE TABLE Groups (
+    group_id INTEGER PRIMARY KEY,
+    name TEXT,
+    city TEXT
+);
+
+CREATE TABLE Festivals (
+    festival_id INTEGER PRIMARY KEY,
+    name TEXT,
+    date TEXT, -- В SQLite DATE хранится как TEXT, INTEGER или REAL
+    group_id INTEGER,
+    FOREIGN KEY (group_id) REFERENCES Groups(group_id)
+);
+
+
+
+
+
+

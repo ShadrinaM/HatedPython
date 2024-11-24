@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #4facfe, #00f2fe); /* Сине-голубой градиент */
+      font-family: Arial, sans-serif;
+      color: #ffffff; /* Белый цвет текста */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #0077b6; /* Темно-синий фон контейнера */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #ffffff; /* Светло-голубой текст заголовка */
+    }
+
+    button {
+      background-color: #00b4d8; /* Голубая кнопка */
+      color: #ffffff;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0077b6; /* Темно-синий при наведении */
+    }
+
+    #dataContainer {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #ffffff;
+      color: #000;
+      border-radius: 10px;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script>
+    function loadTable(action) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/cgi-bin/bbb.py?action=' + action, true);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          document.getElementById('dataContainer').innerHTML = xhr.responseText;
+        } else {
+          document.getElementById('dataContainer').innerHTML = "<p>Произошла ошибка при загрузке данных.</p>";
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Управление данными</h2>
+
+    <!-- Кнопки для перехода к формам -->
+    <div>
+      <button onclick="window.location.href='/AddGroupsForm.html'">Добавить Группу</button>
+      <button onclick="window.location.href='/AddFestivalsForm.html'">Добавить Фестиваль</button>
+      <button onclick="window.location.href='/AddDancersForm.html'">Добавить Танцора</button>
+    </div>
+
+    <h2>Выберите таблицу для отображения данных:</h2>
+
+    <!-- Кнопки для выбора таблицы -->
+    <div>
+      <button onclick="loadTable('groups')">Группы</button>
+      <button onclick="loadTable('festivals')">Фестивали</button>
+      <button onclick="loadTable('dancers')">Танцоры</button>
+    </div>
+
+    <!-- Контейнер для отображения данных -->
+    <div id="dataContainer">
+      <p>Здесь будут отображаться данные из выбранной таблицы.</p>
+    </div>
+  </div>
+</body>
+</html>

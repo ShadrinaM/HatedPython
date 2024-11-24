@@ -12,7 +12,7 @@ cgitb.enable()
 print("Content-Type: text/html\n")
 
 # Подключаемся к базе данных с полным абсолютным путем
-con = sqlite3.connect('C:/Users/Марина/Desktop/питон/db01.db')
+con = sqlite3.connect('C:/Users/Marina/Documents/GitHub/HatedPython/TravelAgencyDB/db01.db')
 cur = con.cursor()
 
 # Получаем данные из формы

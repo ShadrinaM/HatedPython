@@ -12,24 +12,24 @@ cgitb.enable()
 print("Content-Type: text/html\n")
 
 # Подключаемся к базе данных
-con = sqlite3.connect('C:/Users/Marina/Documents/GitHub/HatedPython/TravelAgencyDB/db01.db')  # Убедитесь, что путь правильный
+con = sqlite3.connect('C:/Users/Marina/Documents/GitHub/HatedPython/IndividualTasks/DancingDB/dbdance.db')  # Убедитесь, что путь правильный
 cur = con.cursor()
 
 # Получаем данные из формы
 form = cgi.FieldStorage()
-country_id = form.getvalue("country_id")
+group_id = form.getvalue("group_id")
 name = form.getvalue("name")
-country_description = form.getvalue("country_description")
+city = form.getvalue("city")
 
-# Добавляем данные в таблицу Country, если все значения присутствуют
-if country_id and name and country_description:
+# Добавляем данные в таблицу Groups, если все значения присутствуют
+if group_id and name and city:
     try:
         cur.execute(
-            "INSERT INTO Country (country_id, name, country_description) VALUES (?, ?, ?)",
-            (country_id, name, country_description)
+            "INSERT INTO Groups (group_id, name, city) VALUES (?, ?, ?)",
+            (group_id, name, city)
         )
         con.commit()
-        print("<h2>Данные успешно добавлены!</h2>")
+        print("<h2>Группа успешно добавлена!</h2>")
     except sqlite3.IntegrityError:
         print("<h2>Ошибка: ID уже существует или другая ошибка.</h2>")
 else:
@@ -40,4 +40,4 @@ cur.close()
 con.close()
 
 # Кнопка возврата к форме
-print('<a href="/AddСountryForm.html">Вернуться к форме</a>')
+print('<a href="/AddGroupsForm.html">Вернуться к форме</a>')

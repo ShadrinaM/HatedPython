@@ -1,7 +1,7 @@
 from http.server import HTTPServer, CGIHTTPRequestHandler
-from SELECT import *
+from SelectAllFromDB import *
+from SpecialSelect import *
 import threading
-
 
 def start_server():
     server_address = ("localhost", 8000)  # Иногда хочет пустые кавычки
@@ -12,9 +12,12 @@ def start_server():
 def console_listener():
     while True:
         command = input("Введите команду: ").strip()
-        if command == "selectProc":
-            print("Вызов функции selectProc()")
-            selectProc()
+        if command == "SelectAll":
+            print("Вызов функции SelectAll()")
+            SelectAll()
+        elif command == "SelectSpecial":
+            print("Вызов функции SelectSpecial()")
+            SelectSpecial()
         else:
             print(f"Неизвестная команда: {command}")
 
@@ -24,6 +27,3 @@ server_thread.start()
 
 # Обработка консольных команд
 console_listener()
-
-
-# & "C:\Users\Марина\AppData\Local\Programs\Python\Python312\python.exe" "C:\Users\Марина\Desktop\TravelAgencyDB\server.py"
