@@ -59,8 +59,6 @@ def SelectSpecial():
     ''')
     ballet_dancers_data = cur.fetchall()
     print(tabulate(ballet_dancers_data, headers=["name", "age"], tablefmt="grid"))
-    cur.execute("PRAGMA encoding")
-    print(cur.fetchone())
     cur.close()
     con.close()
 

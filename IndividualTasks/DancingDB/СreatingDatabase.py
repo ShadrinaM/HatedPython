@@ -8,6 +8,7 @@ cur = con.cursor() # Создаёт объект курсор, который п
 cur.execute('DROP TABLE IF EXISTS Dancers') 
 cur.execute('DROP TABLE IF EXISTS Groups') 
 cur.execute('DROP TABLE IF EXISTS Festivals') 
+con.commit()
 
 # Создание новых таблиц
 cur.execute('''
@@ -83,4 +84,4 @@ con.commit()
 cur.close()
 con.close()
 
-SelectAll()
+# SelectAll()

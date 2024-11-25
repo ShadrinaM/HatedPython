@@ -257,7 +257,7 @@ import cgitb
 import sqlite3
 import os
 
-print("Content-Type: text/html; charset=UTF-8\n")  # Устанавливаем кодировку UTF-8
+print("Content-Type: text/html; charset=Windows-1251\n")  # Устанавливаем кодировку UTF-8
 cgitb.enable()
 
 db_path = os.path.join(os.getcwd(), './dbdance.db')
