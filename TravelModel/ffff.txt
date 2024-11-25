@@ -1,0 +1,20 @@
+C:/Users/Marina/AppData/Local/Programs/Python/Python313/python.exe
+
+%USERPROFILE%\AppData\Local\Programs\Python\Python313
+
+
+
+// из cmd
+pip --version
+pip 24.3.1 from C:\Users\Marina\AppData\Local\Programs\Python\Python313\Lib\site-packages\pip (python 3.13)
+
+// из терминала code
+PS C:\Users\Marina\Documents\GitHub\HatedPython\TravelModel\travelmodel> py -V        
+Python 3.13.0
+
+
+// Команда для создания django проекта через cmd, терминал vscode не подходит
+django-admin startproject travelmodel
+
+// Запуск проекта из директории C:\Users\Marina\Documents\GitHub\HatedPython\TravelModel\travelmodel
+py manage.py runserver 5000 
