@@ -1,4 +1,5 @@
 C:/Users/Marina/AppData/Local/Programs/Python/Python313/python.exe
+C:/Users/MM Shadrina/AppData/Local/Programs/Python/Python312/python.exe
 
 %USERPROFILE%\AppData\Local\Programs\Python\Python313
 
