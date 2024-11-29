@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 
 # Загрузка изображения
-image = cv2.imread('image2.jpg', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread('image.png', cv2.IMREAD_GRAYSCALE)
 
 # Шаг 1: Сглаживание изображения (Gaussian Blur)
 blurred = cv2.GaussianBlur(image, (5, 5), 1.4)
