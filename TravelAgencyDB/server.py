@@ -26,4 +26,3 @@ server_thread.start()
 console_listener()
 
 
-# & "C:\Users\Марина\AppData\Local\Programs\Python\Python312\python.exe" "C:\Users\Марина\Desktop\TravelAgencyDB\server.py"
