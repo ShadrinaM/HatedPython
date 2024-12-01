@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Database>
+    <Groups>
+        <Group>
+            <GroupID>6</GroupID>
+            <Name>Groove Crew</Name>
+            <City>Chicago</City>
+        </Group>
+        <Group>
+            <GroupID>7</GroupID>
+            <Name>Step Up</Name>
+            <City>Miami</City>
+        </Group>
+    </Groups>
+    <Dancers>
+        <Dancer>
+            <DancerID>11</DancerID>
+            <Name>Charlie</Name>
+            <Age>30</Age>
+            <Style>Ballet</Style>
+            <GroupID>3</GroupID>
+        </Dancer>
+        <Dancer>
+            <DancerID>12</DancerID>
+            <Name>David</Name>
+            <Age>22</Age>
+            <Style>Jazz</Style>
+            <GroupID>4</GroupID>
+        </Dancer>
+    </Dancers>
+    <Festivals>
+        <Festival>
+            <FestivalID>11</FestivalID>
+            <Name>Chicago Dance Show</Name>
+            <Date>2024-07-20</Date>
+            <GroupID>3</GroupID>
+        </Festival>
+        <Festival>
+            <FestivalID>12</FestivalID>
+            <Name>Miami Dance Celebration</Name>
+            <Date>2024-08-05</Date>
+            <GroupID>4</GroupID>
+        </Festival>
+    </Festivals>
+</Database>

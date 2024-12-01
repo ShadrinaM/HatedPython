@@ -61,7 +61,7 @@
   <script>
     function loadTable(action) {
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', '/cgi-bin/bbb.py?action=' + action, true);
+      xhr.open('GET', '/cgi-bin/SelectFromTable.py?action=' + action, true);
       xhr.onload = function() {
         if (xhr.status === 200) {
           document.getElementById('dataContainer').innerHTML = xhr.responseText;
