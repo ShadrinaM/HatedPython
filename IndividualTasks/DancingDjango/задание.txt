@@ -30,6 +30,7 @@ CREATE TABLE Festivals (
 возможность модифицирования данных в моделях со стороны клиентской части.
 
 
+
 для запуска
 cd dance_project
 python manage.py runserver
