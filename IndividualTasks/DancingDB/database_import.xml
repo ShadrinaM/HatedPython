@@ -2,14 +2,9 @@
 <Database>
     <Groups>
         <Group>
-            <GroupID>6</GroupID>
-            <Name>Groove Crew</Name>
+            <GroupID>9</GroupID>
+            <Name>Crew</Name>
             <City>Chicago</City>
-        </Group>
-        <Group>
-            <GroupID>7</GroupID>
-            <Name>Step Up</Name>
-            <City>Miami</City>
         </Group>
     </Groups>
     <Dancers>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить танцора</title>
+</head>
+<body>
+    <h1>Добавить нового танцора</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="{% url 'home' %}">Назад</a>
+</body>
+</html>

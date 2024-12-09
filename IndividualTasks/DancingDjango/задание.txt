@@ -1,0 +1,31 @@
+Создать приложение на django python, которое должно содержать не менее трех связанных моделей (таблиц) в тематике танцы:
+
+CREATE TABLE Dancers (
+    dancer_id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER,
+    style TEXT,
+    group_id INTEGER,
+    FOREIGN KEY (group_id) REFERENCES Groups(group_id)
+);
+
+CREATE TABLE Groups (
+    group_id INTEGER PRIMARY KEY,
+    name TEXT,
+    city TEXT
+);
+
+CREATE TABLE Festivals (
+    festival_id INTEGER PRIMARY KEY,
+    name TEXT,
+    date TEXT, -- В SQLite DATE хранится как TEXT, INTEGER или REAL
+    group_id INTEGER,
+    FOREIGN KEY (group_id) REFERENCES Groups(group_id)
+);
+ 
+настроить отображение моделей в панели администратора, используя различные списки отображения и фильтры,
+главная страница клиентской части приложения содержит информацию о всех записях главной модели (таблицы) в краткой форме,
+возможность добавления записи в модели (на главной/другой странице),
+возможность детального просмотра информации о каждой записи из главной модели (таблицы),
+возможность модифицирования данных в моделях со стороны клиентской части.
+

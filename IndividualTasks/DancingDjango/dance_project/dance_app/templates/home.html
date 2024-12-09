@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Список Танцоров</h1>
+    <ul>
+        {% for dancer in dancers %}
+            <li>
+                <a href="{% url 'dancer_detail' dancer.pk %}">{{ dancer.name }}</a> ({{ dancer.style }}, {{ dancer.age }} лет)
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="/admin/">Перейти в панель администратора</a></p>
+</body>
+</html>
