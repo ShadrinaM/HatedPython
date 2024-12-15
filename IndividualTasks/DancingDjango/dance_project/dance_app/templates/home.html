@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Список Танцоров</h1>
+    <ul>
+        {% for dancer in dancers %}
+            <li>
+                <a href="{% url 'dancer_detail' dancer.pk %}">{{ dancer.name }}</a> ({{ dancer.style }}, {{ dancer.age }} лет)
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>Список Групп</h1>
+    <ul>
+        {% for group in groups %}
+            <li>{{ group.name }} (город: {{ group.city }})</li>
+        {% endfor %}
+    </ul>
+    
+    <h1>Список Фестивалей</h1>
+    <ul>
+        {% for festival in festivals %}
+            <li>{{ festival.name }} (дата: {{ festival.date }})</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'add_dancer' %}">Добавить нового танцора</a></p>
+    <p><a href="{% url 'add_festival' %}">Добавить новый фестиваль</a></p>
+    <p><a href="{% url 'add_group' %}">Добавить новую группу</a></p>
+    <p><a href="/admin/">Перейти в панель администратора</a></p>
+</body>
+</html>

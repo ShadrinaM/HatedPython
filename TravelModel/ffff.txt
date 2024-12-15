@@ -19,3 +19,10 @@ django-admin startproject travelmodel
 
 // Запуск проекта из директории C:\Users\Marina\Documents\GitHub\HatedPython\TravelModel\travelmodel
 py manage.py runserver 5000 
+
+
+// ПИТОН ДОЛЖЕН БЫТЬ НА ПЕРВОМ МЕСТЕ В PATH, ЭТО ВЫВОД ИЗ ТЕРМИНАЛА VSCODE
+PS C:\Users\Marina\Documents\GitHub\HatedPython\TravelModel> python --version
+Python 3.13.0
+PS C:\Users\Marina\Documents\GitHub\HatedPython\TravelModel> python -m django --version
+5.1.3

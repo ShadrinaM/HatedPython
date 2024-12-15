@@ -83,5 +83,3 @@ cur.executemany('''INSERT INTO Festivals (name, date, group_id) VALUES (?, ?, ?)
 con.commit()
 cur.close()
 con.close()
-
-# SelectAll()
