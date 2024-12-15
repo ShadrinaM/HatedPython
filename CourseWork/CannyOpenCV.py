@@ -1,6 +1,7 @@
 #  & "C:/Users/MM Shadrina/AppData/Local/Programs/Python/Python312/python.exe" "D:\Фото-видео файлы  оригинал\Учёба\Учёба ВУЗ\Githubproject\HatedPython\CourseWork\CannyOpenCV.py"
 # D:
 # cd "D:/Фото-видео файлы оригинал/Учёба/Учёба ВУЗ/Githubproject/HatedPython/CourseWork"
+#  cd D:\Фото-видео файлы  оригинал\Учёба\Учёба ВУЗ\Githubproject\HatedPython\CourseWork
 
 # python CannyOpenCV.py
 
@@ -12,7 +13,7 @@ import matplotlib.pyplot as plt
 
 
 # Загрузка изображения
-image = cv2.imread('image2.jpg', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread('image26.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Шаг 1: Сглаживание изображения (Gaussian Blur)
 blurred = cv2.GaussianBlur(image, (5, 5), 1.4)
