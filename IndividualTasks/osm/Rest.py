@@ -12,18 +12,19 @@ def parse_opening_hours(opening_hours):
 
 # Чтение и обработка XML файла
 def group_restaurants_by_opening_hours(osm_file):
-    tree = ET.parse(osm_file)
-    root = tree.getroot()
+    tree = ET.parse(osm_file) # Загружает XML-файл
+    root = tree.getroot() # Извлекает корневой элемент с помощью getroot() для работы с дочерними узлами
     
     # Словарь для группировки по часам открытия
+    # где ключи — часы открытия (или строка "Без времени работы"), а значения — списки ресторанов, открывающихся в это время
     grouped_restaurants = defaultdict(list)
-    no_time_group = "Без времени работы"
+    no_time_group = "Без времени работы" #метка ресторанов, у которых отсутствует информация о времени работы
     
     # Поиск ресторанов
     for element in root.findall('node'):
-        is_restaurant = False
-        opening_hours = None
-        restaurant_name = None
+        is_restaurant = False # Флаг, указывающий, является ли текущий узел рестораном.
+        opening_hours = None # Строка с временем работы, если указана
+        restaurant_name = None # Название ресторана, если указано
         
         for tag in element.findall('tag'):
             if tag.attrib.get('k') == 'amenity' and tag.attrib.get('v') == 'restaurant':
@@ -45,13 +46,13 @@ def group_restaurants_by_opening_hours(osm_file):
     
     return grouped_restaurants
 
-# Пример вызова функции
-osm_file_path = "3.osm"  # Замените на путь к вашему файлу OSM
+
+osm_file_path = "3.osm"
 grouped = group_restaurants_by_opening_hours(osm_file_path)
 
 # Печать результатов
 for hour, restaurants in sorted(grouped.items(), key=lambda x: (isinstance(x[0], int), x[0])):
-    if isinstance(hour, int):
+    if isinstance(hour, int): #если int
         print(f"Открываются с {hour}:00:")
     else:
         print(f"{hour}:")
