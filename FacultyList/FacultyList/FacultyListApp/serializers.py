@@ -4,4 +4,4 @@ from .models import Faculty
 class FacultySerializer(serializers.ModelSerializer):
     class Meta:
         model = Faculty
-        fields = ['id', 'faculty_name']
+        fields = ['id', 'name']

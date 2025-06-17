@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import FacultyListCreate, FacultyDelete
+from . import views
 
 urlpatterns = [
-    path('faculties/', FacultyListCreate.as_view(), name='faculty-list-create'),
-    path('faculty/<int:id>/', FacultyDelete.as_view(), name='faculty-delete'),
+    path('faculties', views.get_faculties),
+    path('faculty', views.post_faculty),
+    path('faculty/int:id', views.delete_faculty),
 ]

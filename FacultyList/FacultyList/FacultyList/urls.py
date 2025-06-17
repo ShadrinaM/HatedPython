@@ -20,10 +20,5 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('FacultyListApp.urls')),  # Включение URL-маршрутов вашего приложения
-    path('', RedirectView.as_view(url='api/')),  # Перенаправление корневого URL на 'api/'
+    path('', include('FacultyListApp.urls')),
 ]
-
-
-
-
